@@ -12,13 +12,6 @@ import { SobreComponent } from './page/sobre/sobre.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 
-const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'exibicao', component: ExibicaoComponent },
-  { path: 'formulario', component: FormularioComponent },
-  { path: 'sobre', component: SobreComponent }
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +25,6 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes),
     FormsModule
   ],
   providers: [],
