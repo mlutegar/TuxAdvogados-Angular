@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -7,18 +7,20 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './clienteformulario.component.html',
   styleUrls: ['./clienteformulario.component.css']
 })
-export class ClienteFormularioComponent{
+export class ClienteFormularioComponent implements OnInit{
   formDataDriven!: FormGroup;
 
   // Variavel que recebe e manipula as coleções do firestore
   clienteCollection!: AngularFirestoreCollection;
 
-  // Criando a dependencia
-  constructor(private formBuilder: FormBuilder, private af: AngularFirestore) {
+  // Criando a dependencia (boa pratica para deixar o contrutor somente para injeção de dependencia)
+  constructor(private formBuilder: FormBuilder, private af: AngularFirestore) {  }
 
-    // Apresentação
-    this.clienteCollection = af.collection("clientes");
-    this.validaForm();
+  // Método que carrega no inicio da classe tudo que tiver
+  ngOnInit(): void {
+       // Apresentação
+       this.clienteCollection = this.af.collection("clientes");
+       this.validaForm();
   }
 
   // Método estatico (ou seja, ele não se executa sozinho)
