@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 
 import { HomeComponent } from './page/home/home.component';
 import { ExibicaoComponent } from './component/exibicao/exibicao.component';
-import { FormularioComponent } from './page/formulario/formulario.component';
+import { ClienteFormularioComponent } from './page/clienteformulario/clienteformulario.component';
 import { SobreComponent } from './page/sobre/sobre.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
@@ -22,7 +22,7 @@ import { environment } from 'src/environments/environments';
     AppComponent,
     HomeComponent,
     ExibicaoComponent,
-    FormularioComponent,
+    ClienteFormularioComponent,
     SobreComponent,
     HeaderComponent,
     FooterComponent,
@@ -32,6 +32,7 @@ import { environment } from 'src/environments/environments';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase), // O objetivo desse import é fazer a ligação com o firebase
 
     // Agora vou importar o AngularFirestorModule, que é responsavel por fornecer as ferramentas dos banco de dados
