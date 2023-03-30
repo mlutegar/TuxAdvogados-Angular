@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FirebaseService } from 'src/app/servico/firebase.service';
 
 @Component({
   selector: 'app-clienteformulario',
@@ -10,17 +10,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ClienteFormularioComponent implements OnInit{
   formDataDriven!: FormGroup;
 
-  // Variavel que recebe e manipula as coleções do firestore
-  clienteCollection!: AngularFirestoreCollection;
-
   // Criando a dependencia (boa pratica para deixar o contrutor somente para injeção de dependencia)
-  constructor(private formBuilder: FormBuilder, private af: AngularFirestore) {  }
+  constructor(
+    private formBuilder: FormBuilder,
+    private fs: FirebaseService
+    ){}
 
   // Método que carrega no inicio da classe tudo que tiver
   ngOnInit(): void {
-       // Apresentação
-       this.clienteCollection = this.af.collection("clientes");
-       this.validaForm();
+    this.validaForm();
   }
 
   // Método estatico (ou seja, ele não se executa sozinho)
@@ -34,12 +32,11 @@ export class ClienteFormularioComponent implements OnInit{
   }
 
   // Método chamado pelo submit do botão de formulario
-  cadastrar() {
-    this.clienteCollection.add(this.formDataDriven.value);
-    console.log(this.formDataDriven.value);
-  }
-
-  form(formulario: any){
-    console.log(formulario.value);
+  cadastrar(){
+    try{
+      this.fs.cadastrarDados(this.formDataDriven.value);
+    }catch(err){
+      console.log(err);
+    }
   }
 }

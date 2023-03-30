@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-3" *ngFor="let cliente of clientes">
       <div class="card">
-        <img [src]="cliente.imagem" [alt]="cliente.nome" class="card-img-top">
+        <img [src]="cliente.url_foto" [alt]="cliente.nome" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">{{ cliente.nome }}</h5>
           <p class="card-text">{{ cliente.email }}</p>
