@@ -7,7 +7,7 @@ import { map } from "rxjs";
     providedIn: 'root'
 })
 
-export class FirebaseService implements OnInit{
+export class FirebaseService{
     // Variavel que vai receber e manipular as coleções
     minhaColecao: AngularFirestoreCollection;
 
@@ -16,12 +16,9 @@ export class FirebaseService implements OnInit{
         this.minhaColecao = this.af.collection('clientes');
     }
 
-    // ONINIT: é o método responsavel por carregar tudo dentro dele e junto com a classe
-    ngOnInit(): void {
-    }
-
     // MÉTODOS
 
+    // Para capturar todas as fotos.
     consultaDados(){
         return this.minhaColecao.snapshotChanges().pipe(
             map(actions => {
@@ -32,6 +29,11 @@ export class FirebaseService implements OnInit{
                 })
             })
         )
+    }
+
+    // Para capturar apenas um dado
+    consultaUm(id){
+        return this.minhaColecao.doc(id).valueChanges();
     }
 
     cadastrarDados(dados: any){

@@ -16,6 +16,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { ClientesComponent } from './page/clientes/clientes.component';
 import { environment } from 'src/environments/environments';
+import { ClienteupdateComponent } from './page/clienteupdate/clienteupdate.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { environment } from 'src/environments/environments';
     SobreComponent,
     HeaderComponent,
     FooterComponent,
-    ClientesComponent
+    ClientesComponent,
+    ClienteupdateComponent
   ],
   imports: [
     BrowserModule,

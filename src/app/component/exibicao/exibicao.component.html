@@ -7,6 +7,8 @@
           <h5 class="card-title">{{ cliente.nome }}</h5>
           <p class="card-text">{{ cliente.email }}</p>
           <p class="card-text">{{ cliente.telefone }}</p>
+          <button class="btn btn-danger btn-block" (click)="excluir(cliente.id)"> Excluir </button>
+          <button class="btn btn-success btn-block" [routerLink]="['/update', cliente.id]"> Editar </button>
         </div>
       </div>
     </div>

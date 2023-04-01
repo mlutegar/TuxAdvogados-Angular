@@ -35,6 +35,7 @@ export class ClienteFormularioComponent implements OnInit{
   cadastrar(){
     try{
       this.fs.cadastrarDados(this.formDataDriven.value);
+      alert("Cliente novo cadastrado com sucesso!")
     }catch(err){
       console.log(err);
     }

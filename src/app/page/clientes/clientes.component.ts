@@ -14,5 +14,6 @@ export class ClientesComponent implements OnInit{
 
   ngOnInit(): void {
     this.fs.consultaDados().subscribe(caixinha => this.listaDeClientes = caixinha);
+    // O this.fs.consultaDados() é uma função que apenas observa o nosso banco de dados.
   }
 }

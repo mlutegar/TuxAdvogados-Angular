@@ -4,12 +4,14 @@ import { ClientesComponent } from './page/clientes/clientes.component';
 import { ClienteFormularioComponent } from './page/clienteformulario/clienteformulario.component';
 import { HomeComponent } from './page/home/home.component';
 import { SobreComponent } from './page/sobre/sobre.component';
+import { ClienteupdateComponent } from './page/clienteupdate/clienteupdate.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'clientes', component: ClientesComponent },
   { path: 'clienteformulario', component: ClienteFormularioComponent },
-  { path: 'sobre', component: SobreComponent }
+  { path: 'sobre', component: SobreComponent },
+  { path: 'update/:id', component: ClienteupdateComponent}
 ];
 
 @NgModule({
