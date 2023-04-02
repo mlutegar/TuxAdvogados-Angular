@@ -19,27 +19,30 @@ export class ClienteupdateComponent implements OnInit{
     ){}
 
   ngOnInit(): void{
+    this.createForm("");
     this.routeId = this.activated.snapshot.params['id'];
 
     if(this.routeId){
-      this.fs.consultaUm(this.routeId).subscribe(caixinha => console.log(caixinha))
+      this.fs.consultaUm(this.routeId).subscribe(caixinha => this.createForm(caixinha));
     }
 
-    this.createForm();
+
   }
 
-  createForm(){
+  createForm(dados){
     this.updateForm = this.formBuilder.group({
-      url_foto: [''],
-      nome: [''],
-      email: [''],
-      telefone: ['']
+      url_foto: [dados.url_foto],
+      nome: [dados.nome],
+      email: [dados.email],
+      telefone: [dados.telefone]
     })
   }
 
   atualizar(){
-    
+    this.fs.editaDados(this.routeId, this.updateForm.value);
   }
 
 
 }
+
+/// 2:40MIN
