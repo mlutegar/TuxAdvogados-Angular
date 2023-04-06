@@ -18,6 +18,7 @@ import { ClientesComponent } from './page/clientes/clientes.component';
 import { environment } from 'src/environments/environments';
 import { ClienteupdateComponent } from './page/clienteupdate/clienteupdate.component';
 import { LoginComponent } from './page/login/login.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -38,9 +39,8 @@ import { LoginComponent } from './page/login/login.component';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase), // O objetivo desse import é fazer a ligação com o firebase
-
-    // Agora vou importar o AngularFirestorModule, que é responsavel por fornecer as ferramentas dos banco de dados
-    AngularFirestoreModule
+    AngularFirestoreModule, // Agora vou importar o AngularFirestorModule, que é responsavel por fornecer as ferramentas dos banco de dados
+    AngularFireAuthModule // responsabel por autenticar
   ],
   providers: [],
   bootstrap: [AppComponent]
