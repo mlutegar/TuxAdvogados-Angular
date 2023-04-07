@@ -25,8 +25,6 @@ export class ClienteupdateComponent implements OnInit{
     if(this.routeId){
       this.fs.consultaUm(this.routeId).subscribe(caixinha => this.createForm(caixinha));
     }
-
-
   }
 
   createForm(dados){
