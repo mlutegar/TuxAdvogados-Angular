@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AutenticarService } from 'src/app/servico/autenticar.service';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +9,16 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  title = "TuxAdvogados"
+  title = "TuxAdvogados";
+
+  constructor(
+    private autenticar: AutenticarService,
+    private router: Router
+  ) {}
+
+  deslogar(){
+    this.autenticar.logout();
+    this.router.navigate(['']);
+  }
 
 }

@@ -1,0 +1,21 @@
+body {
+    background-color: #f5f5f5;
+}
+.login-form {
+    margin-top: 50px;
+}
+.form-control:focus {
+    border-color: #4aba70;
+    box-shadow: none;
+}
+.btn {
+    background-color: #4aba70;
+    border-color: #4aba70;
+}
+.btn:hover {
+    background-color: #3d8b57;
+    border-color: #3d8b57;
+}
+.form-check-label {
+    font-weight: normal;
+}
