@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {CanActivate, Router } from '@angular/router';
 import { AutenticarService } from '../servico/autenticar.service';
+import { HeaderComponent } from '../component/header/header.component';
 
 @Injectable({
   providedIn: 'root'

@@ -10,13 +10,13 @@ import { AppComponent } from './app.component';
 
 import { HomeComponent } from './page/home/home.component';
 import { ExibicaoComponent } from './component/exibicao/exibicao.component';
-import { ClienteFormularioComponent } from './page/clienteformulario/clienteformulario.component';
+import { ClienteFormularioComponent } from './page/cliente/clienteformulario/clienteformulario.component';
 import { SobreComponent } from './page/sobre/sobre.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
-import { ClientesComponent } from './page/clientes/clientes.component';
+import { ClientesComponent } from './page/cliente/clientes/clientes.component';
 import { environment } from 'src/environments/environments';
-import { ClienteupdateComponent } from './page/clienteupdate/clienteupdate.component';
+import { ClienteupdateComponent } from './page/cliente/clienteupdate/clienteupdate.component';
 import { LoginComponent } from './page/login/login.component';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 

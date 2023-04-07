@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HeaderComponent } from 'src/app/component/header/header.component';
 import { AutenticarService } from 'src/app/servico/autenticar.service';
 
 @Component({
@@ -42,9 +43,7 @@ export class LoginComponent implements OnInit{
     if (this.nameButtonForm == "Logar") {
       alert("Logado com sucesso!");
       this.autenticaService.autenticarUser(this.formulario.value); // Autenticar o usuario existente
-
       this.autenticaService.detalesUser().user.subscribe(results => this.usuario = "Usuario: " + results.email);
-
     } else if(this.nameButtonForm == "Cadastrar"){
       alert("Cadastrado com sucesso!");
       this.autenticaService.cadastrarUser(this.formulario.value); // cadastrar o usuario
@@ -66,15 +65,6 @@ export class LoginComponent implements OnInit{
       this.nameButtonCad = "Não possui conta? Clique aqui";
     }
   }
-
-  // FUNÇÃO PARA SE DESLOGAR
-  deslogar(){
-    this.autenticaService.logout();
-    this.router.navigate(['']);
-  }
-
-
-
 }
 
 // 53min56seg
