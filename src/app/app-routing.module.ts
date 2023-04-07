@@ -8,14 +8,16 @@ import { HomeComponent } from './page/home/home.component';
 import { SobreComponent } from './page/sobre/sobre.component';
 import { ClienteupdateComponent } from './page/clienteupdate/clienteupdate.component';
 import { LoginComponent } from './page/login/login.component';
+import { RouterGuard } from './guardRouters/router.guard';
+import { LoginGuard } from './guardRouters/login.guard';
 
 // ROTAS
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'home', component: HomeComponent},
-  { path: 'clientes', component: ClientesComponent },
-  { path: 'clienteformulario', component: ClienteFormularioComponent },
-  { path: 'sobre', component: SobreComponent },
+  { path: '', component: LoginComponent, canActivate: [LoginGuard] },
+  { path: 'home', component: HomeComponent, canActivate: [RouterGuard]},
+  { path: 'clientes', component: ClientesComponent, canActivate: [RouterGuard] },
+  { path: 'clienteformulario', component: ClienteFormularioComponent, canActivate: [RouterGuard] },
+  { path: 'sobre', component: SobreComponent, canActivate: [RouterGuard] },
   { path: 'update/:id', component: ClienteupdateComponent}
 ];
 

@@ -40,12 +40,10 @@ export class LoginComponent implements OnInit{
   // MÉTODO CHAMADO PELO INPUT
   formAuth(){
     if (this.nameButtonForm == "Logar") {
-      alert("Login");
+      alert("Logado com sucesso!");
       this.autenticaService.autenticarUser(this.formulario.value); // Autenticar o usuario existente
 
       this.autenticaService.detalesUser().user.subscribe(results => this.usuario = "Usuario: " + results.email);
-
-      //this.router.navigate(['/home']); // Redireciona para a página
 
     } else if(this.nameButtonForm == "Cadastrar"){
       alert("Cadastrado com sucesso!");
@@ -69,8 +67,14 @@ export class LoginComponent implements OnInit{
     }
   }
 
+  // FUNÇÃO PARA SE DESLOGAR
+  deslogar(){
+    this.autenticaService.logout();
+    this.router.navigate(['']);
+  }
+
 
 
 }
 
-// 2H 4MIN 20SEG
+// 53min56seg

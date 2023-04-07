@@ -14,7 +14,9 @@ export class AutenticarService {
   cadastrarUser(user){ // criador de usuario
     return this.angularFireAuth.createUserWithEmailAndPassword(user.email, user.password);
   }
-  logout(){}
+  logout(){
+    return this.angularFireAuth.signOut();
+  }
 
   detalesUser(){
     return this.angularFireAuth
