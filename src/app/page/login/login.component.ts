@@ -43,11 +43,11 @@ export class LoginComponent implements OnInit{
     if (this.nameButtonForm == "Logar") {
       alert("Logado com sucesso!");
       this.autenticaService.autenticarUser(this.formulario.value); // Autenticar o usuario existente
-      this.autenticaService.detalesUser().user.subscribe(results => this.usuario = "Usuario: " + results.email);
+
     } else if(this.nameButtonForm == "Cadastrar"){
       alert("Cadastrado com sucesso!");
       this.autenticaService.cadastrarUser(this.formulario.value); // cadastrar o usuario
-      this.router.navigate(['/']); // Levar para a tela de login
+
     } else{
       alert("Opção invalida");
     }
